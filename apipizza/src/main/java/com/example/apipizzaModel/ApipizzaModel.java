@@ -1,12 +1,17 @@
 package com.example.apipizzaModel;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+import java.util.Objects;
 
 @Entity
+@Table(name ="PizzaTable")
 public class ApipizzaModel {
-    @Id
-    private Long id;
+    private @Id
+    @GeneratedValue Long id;
     private String sabor;
 
     ApipizzaModel() {}
