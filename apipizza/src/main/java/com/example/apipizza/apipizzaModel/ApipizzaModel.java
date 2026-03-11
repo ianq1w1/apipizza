@@ -24,9 +24,6 @@ public class ApipizzaModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String sabor;
-
-    ApipizzaModel(String sabor){}    
-
 }
 
 
