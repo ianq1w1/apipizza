@@ -2,6 +2,7 @@ package com.example.apipizza_Controller;
 
 //import com.example.apipizzaModel.ApipizzaModel;
 import com.example.DTOs.ApipizzaDTO;
+import com.example.DTOs.RespostaApipizzaDTO;
 import com.example.repositories.ApipizzaRepository;
 import com.example.apipizzaService.ApipizzaService;
 
@@ -22,21 +23,22 @@ import org.springframework.web.bind.annotation.RequestBody;
 @RequestMapping("/pizza")
 public class ApipizzaController {
     
-    @Autowired
     private ApipizzaService service;
+    public ApipizzaController(ApipizzaService service){
+        this.service = service;
+    }
 
     @PostMapping("/post")
-    public String createPizza(@RequestBody ApipizzaDTO dto) {
-        //TODO: process POST request
-        
-        return service.criar();
+    public RespostaApipizzaDTO createPizza(@RequestBody ApipizzaDTO dto) {
+         return service.salvar(dto);       
     }
     
+    /*
     @GetMapping("/pizza/{id}")
     ApipizzaModel one(@PathVariable Long id) {
 
         return repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("xiiii deu ruim"));
-    }
+    } */
 }
 
