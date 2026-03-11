@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ApipizzaApplication<apipizza>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.apipizza.ApipizzaApplication",
+            "projectName": "apipizza",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

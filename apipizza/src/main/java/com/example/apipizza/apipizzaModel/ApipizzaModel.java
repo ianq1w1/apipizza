@@ -1,4 +1,4 @@
-package com.example.apipizzaModel;
+package com.example.apipizza.apipizzaModel;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

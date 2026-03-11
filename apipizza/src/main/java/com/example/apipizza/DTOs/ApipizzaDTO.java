@@ -1,8 +1,9 @@
-package com.example.DTOs;
+package com.example.apipizza.DTOs;
 
 
 
 public record ApipizzaDTO(String sabor) {
 }
+
    
 

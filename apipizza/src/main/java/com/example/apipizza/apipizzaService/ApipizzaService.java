@@ -1,13 +1,13 @@
-package com.example.apipizzaService;
+package com.example.apipizza.apipizzaService;
 
 import org.springframework.stereotype.Service;
 
 //import org.springframework.beans.factory.annotation.Autowired;
 
-import com.example.DTOs.ApipizzaDTO;
-import com.example.DTOs.RespostaApipizzaDTO;
-import com.example.repositories.ApipizzaRepository;
-import com.example.apipizzaModel.ApipizzaModel;
+import com.example.apipizza.DTOs.ApipizzaDTO;
+import com.example.apipizza.DTOs.RespostaApipizzaDTO;
+import com.example.apipizza.repositories.ApipizzaRepository;
+import com.example.apipizza.apipizzaModel.ApipizzaModel;
 
 
 import jakarta.transaction.Transactional;;

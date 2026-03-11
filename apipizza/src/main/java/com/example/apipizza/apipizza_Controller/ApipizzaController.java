@@ -1,10 +1,10 @@
-package com.example.apipizza_Controller;
+package com.example.apipizza.apipizza_Controller;
 
-//import com.example.apipizzaModel.ApipizzaModel;
-import com.example.DTOs.ApipizzaDTO;
-import com.example.DTOs.RespostaApipizzaDTO;
-import com.example.repositories.ApipizzaRepository;
-import com.example.apipizzaService.ApipizzaService;
+//import com.example.apipizza.apipizzaModel.ApipizzaModel;
+import com.example.apipizza.DTOs.ApipizzaDTO;
+import com.example.apipizza.DTOs.RespostaApipizzaDTO;
+import com.example.apipizza.repositories.ApipizzaRepository;
+import com.example.apipizza.apipizzaService.ApipizzaService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 //import com.example.repositories.ApipizzaRepository;
@@ -28,7 +28,7 @@ public class ApipizzaController {
         this.service = service;
     }
 
-    @PostMapping("/post")
+    @PostMapping
     public RespostaApipizzaDTO createPizza(@RequestBody ApipizzaDTO dto) {
          return service.salvar(dto);       
     }
