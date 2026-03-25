@@ -29,5 +29,13 @@ public class ApipizzaService {
         ApipizzaModel pizzaSalva = repository.save(pizza);
         return new RespostaApipizzaDTO(pizzaSalva.getId(), pizzaSalva.getSabor()); 
     }
+
+
+    public RespostaApipizzaDTO listOne(Long id){
+
+        ApipizzaModel pizzaListada = repository.findById(id);
+        return new RespostaApipizzaDTO(pizzaListada.getId(), pizzaListada.getSabor());
+
+    }
     
 }

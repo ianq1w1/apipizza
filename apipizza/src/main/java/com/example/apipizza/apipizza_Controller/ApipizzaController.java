@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
  
 
@@ -31,6 +33,13 @@ public class ApipizzaController {
     @PostMapping
     public RespostaApipizzaDTO createPizza(@RequestBody ApipizzaDTO dto) {
          return service.salvar(dto);       
+    }
+
+
+    //listar apenas um
+    @GetMapping("/{id}")
+    public RespostaApipizzaDTO listOnePizza(@PathVariable Long id) {
+        return service.listOne(id);
     }
     
     /*
