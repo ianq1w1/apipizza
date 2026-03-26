@@ -37,10 +37,12 @@ public class ApipizzaController {
 
 
     //listar apenas um
+    /*
     @GetMapping("/{id}")
     public RespostaApipizzaDTO listOnePizza(@PathVariable Long id) {
         return service.listOne(id);
     }
+     */
     
     /*
     @GetMapping("/pizza/{id}")

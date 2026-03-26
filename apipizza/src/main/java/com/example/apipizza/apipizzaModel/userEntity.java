@@ -32,6 +32,6 @@ public class userEntity {
     private String nome;
     private String password;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ApipizzaModel> pizzas = new ArrayList<>();
 }

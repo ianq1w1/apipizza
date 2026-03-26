@@ -15,11 +15,12 @@ import jakarta.transaction.Transactional;;
 @Service
 public class ApipizzaService {
     
-    private ApipizzaRepository repository;
+    private final ApipizzaRepository repository;
 
-    public ApipizzaService(ApipizzaRepository repository){
+    public ApipizzaService (ApipizzaRepository repository){
         this.repository = repository;
     }
+
 
     @Transactional
     public RespostaApipizzaDTO salvar(ApipizzaDTO dto){
@@ -30,12 +31,12 @@ public class ApipizzaService {
         return new RespostaApipizzaDTO(pizzaSalva.getId(), pizzaSalva.getSabor()); 
     }
 
-
+/*
     public RespostaApipizzaDTO listOne(Long id){
 
         ApipizzaModel pizzaListada = repository.findById(id);
         return new RespostaApipizzaDTO(pizzaListada.getId(), pizzaListada.getSabor());
 
     }
-    
+  */  
 }
