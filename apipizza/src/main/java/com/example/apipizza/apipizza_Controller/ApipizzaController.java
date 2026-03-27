@@ -7,6 +7,7 @@ import com.example.apipizza.repositories.ApipizzaRepository;
 import com.example.apipizza.apipizzaService.ApipizzaService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 //import com.example.repositories.ApipizzaRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,18 +32,20 @@ public class ApipizzaController {
     }
 
     @PostMapping
-    public RespostaApipizzaDTO createPizza(@RequestBody ApipizzaDTO dto) {
-         return service.salvar(dto);       
+    public ResponseEntity <RespostaApipizzaDTO> createPizza(@RequestBody ApipizzaDTO dto) {
+        RespostaApipizzaDTO response = service.salvar(dto);
+        return ResponseEntity.status(201).body(response);       
     }
 
 
     //listar apenas um
-    /*
+    
     @GetMapping("/{id}")
-    public RespostaApipizzaDTO listOnePizza(@PathVariable Long id) {
-        return service.listOne(id);
+    public ResponseEntity <RespostaApipizzaDTO> listOnePizza(@PathVariable Long id) {
+        RespostaApipizzaDTO response = service.listOne(id);
+        return ResponseEntity.status(201).body(response);
     }
-     */
+    
     
     /*
     @GetMapping("/pizza/{id}")

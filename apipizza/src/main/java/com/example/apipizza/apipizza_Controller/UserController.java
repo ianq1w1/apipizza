@@ -2,6 +2,7 @@ package com.example.apipizza.apipizza_Controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -24,8 +25,9 @@ public class UserController {
     }
     
     @PostMapping
-    public UserResponseDTO criarUser(@RequestBody UserRequestDTO dto) {
-        return service.criar(dto);
+    public ResponseEntity <UserResponseDTO> criarUser(@RequestBody UserRequestDTO dto) {
+        UserResponseDTO response = service.criar(dto);
+        return ResponseEntity.status(201).body(response);
     }
     
 }

@@ -31,12 +31,13 @@ public class ApipizzaService {
         return new RespostaApipizzaDTO(pizzaSalva.getId(), pizzaSalva.getSabor()); 
     }
 
-/*
+
     public RespostaApipizzaDTO listOne(Long id){
 
-        ApipizzaModel pizzaListada = repository.findById(id);
+        ApipizzaModel pizzaListada = repository.findById(id)
+            .orElseThrow(() -> new RuntimeException("pizza nao encontrada"));
         return new RespostaApipizzaDTO(pizzaListada.getId(), pizzaListada.getSabor());
 
     }
-  */  
+    
 }
