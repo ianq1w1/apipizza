@@ -15,15 +15,14 @@ import com.example.apipizza.apipizzaService.UserService;
 @RestController
 @RequestMapping("/usuario")
 public class UserController {
-
-
-
     private final UserService service;
 
     public UserController(UserService service) {
         this.service = service;
     }
-    
+
+    //create
+
     @PostMapping
     public ResponseEntity <UserResponseDTO> criarUser(@RequestBody UserRequestDTO dto) {
         UserResponseDTO response = service.criar(dto);

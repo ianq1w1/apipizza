@@ -2,7 +2,7 @@ package com.example.apipizza.DTOs;
 
 
 
-public record ApipizzaDTO(String sabor) {
+public record ApipizzaDTO(String sabor, Long userID) {
 }
 
    

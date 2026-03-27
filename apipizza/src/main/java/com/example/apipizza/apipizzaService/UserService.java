@@ -22,6 +22,7 @@ public class UserService {
         this.repository = repository;
     }
     
+    //criar
     @Transactional
     public UserResponseDTO criar(UserRequestDTO dto){
         userEntity user = new userEntity();
