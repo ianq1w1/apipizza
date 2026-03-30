@@ -8,25 +8,37 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import com.example.apipizza.DTOs.UserRequestDTO;
 import com.example.apipizza.DTOs.UserResponseDTO;
-
+import com.example.apipizza.DTOs.UserLoginDTO;
+import com.example.apipizza.apipizzaModel.userEntity;
 import com.example.apipizza.apipizzaService.UserService;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 @RestController
 @RequestMapping("/usuario")
-public class UserController {
-    private final UserService service;
 
+public class UserController {
+
+    private final UserService service;
     public UserController(UserService service) {
         this.service = service;
     }
 
     //create
 
-    @PostMapping
+    @PostMapping("/cadastro")
     public ResponseEntity <UserResponseDTO> criarUser(@RequestBody UserRequestDTO dto) {
         UserResponseDTO response = service.criar(dto);
         return ResponseEntity.status(201).body(response);
     }
+
+    //login!!
+    @PostMapping("/login")
+    public ResponseEntity <UserResponseDTO> logarUser(@RequestBody UserLoginDTO dto) {
+        //return();
+    }
+    
     
 }
